@@ -1,0 +1,115 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'TInstructor - Demo'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object pnl_main: TPanel
+    Align = Client
+    Margins.Left = 10.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 10.000000000000000000
+    Margins.Bottom = 5.000000000000000000
+    Size.Width = 620.000000000000000000
+    Size.Height = 401.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object btn_2: TButton
+      Position.X = 16.000000000000000000
+      Position.Y = 112.000000000000000000
+      TabOrder = 3
+      Text = 'Button 2'
+    end
+    object pnl_1: TPanel
+      Position.X = 352.000000000000000000
+      Position.Y = 312.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 72.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+    end
+    object rctngl: TRectangle
+      Fill.Color = xFF8E6E6E
+      Position.X = 352.000000000000000000
+      Position.Y = 72.000000000000000000
+      Size.Width = 249.000000000000000000
+      Size.Height = 138.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object btn_1: TButton
+      Position.X = 16.000000000000000000
+      Position.Y = 16.000000000000000000
+      TabOrder = 7
+      Text = 'Button 1'
+    end
+    object btn_3: TButton
+      Position.X = 16.000000000000000000
+      Position.Y = 360.000000000000000000
+      TabOrder = 2
+      Text = 'Button 3'
+    end
+    object instructor: TInstructor
+      Visible = False
+      Background.Color = xAAA52A2A
+      ControlBorder.Color = claBlue
+      LabelFontColor = claCoral
+      LabelStyledSettings = [Family, Size, Style, FontColor]
+      ButtonFont.StyleExt = {00070000000000000004000000}
+      ButtonFontColor = claBlueviolet
+      ButtonStyledSettings = [Family, Size, Style, FontColor]
+      ActiveStep = -1
+      PrevButtonText = 'Prev'
+      NextButtonText = 'Next'
+      StopButtonText = 'Stop'
+      ButtonHeight = 30.000000000000000000
+    end
+  end
+  object grdpnlyt1: TGridPanelLayout
+    Align = Bottom
+    Position.Y = 416.000000000000000000
+    Size.Width = 640.000000000000000000
+    Size.Height = 64.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    ColumnCollection = <
+      item
+        Value = 23.809523809523800000
+      end
+      item
+        Value = 59.523809523809510000
+      end
+      item
+        Value = 16.666666666666680000
+      end>
+    ControlCollection = <
+      item
+        Column = 1
+        Control = btn_instructor
+        Row = 0
+      end>
+    RowCollection = <
+      item
+        Value = 100.000000000000000000
+      end
+      item
+        SizeStyle = Auto
+      end>
+    object btn_instructor: TButton
+      Align = Client
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Size.Width = 360.952423095703100000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Start Instructor'
+      OnClick = btn_instructorClick
+    end
+  end
+end

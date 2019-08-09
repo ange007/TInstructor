@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8604391B-834D-4689-B3B2-531AC758CEFA}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Instructor.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Demo\InstructorDemo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Instructor">
+        <MSBuild Projects="Instructor.dproj"/>
+    </Target>
+    <Target Name="Instructor:Clean">
+        <MSBuild Projects="Instructor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Instructor:Make">
+        <MSBuild Projects="Instructor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="InstructorDemo">
+        <MSBuild Projects="Demo\InstructorDemo.dproj"/>
+    </Target>
+    <Target Name="InstructorDemo:Clean">
+        <MSBuild Projects="Demo\InstructorDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="InstructorDemo:Make">
+        <MSBuild Projects="Demo\InstructorDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Instructor;InstructorDemo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Instructor:Clean;InstructorDemo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Instructor:Make;InstructorDemo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
